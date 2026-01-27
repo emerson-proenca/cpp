@@ -1,16 +1,15 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> um;
         for (int i = 0; i < nums.size(); i++) {
-            for (int j = 0; j < nums.size(); j++) {
-                if (i != j) {
-                    if (nums[i] + nums[j] == target) {
-                        return {i, j};
-                    }
-                // cout << nums[i] << " " << nums[j] << endl; 
-                }
+            int d = target - nums[i];
+            if (um.find(d) != um.end()) {
+                return {um[d], i};
+            } else {
+                um[nums[i]] = i;
             }
         }
-        return {1, 0};
+        return {0, 0};
     }
 };
