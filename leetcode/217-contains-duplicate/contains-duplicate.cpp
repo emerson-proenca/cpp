@@ -2,13 +2,12 @@ class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
         unordered_map<int, int> um;
-        for (auto i : nums) {
-            if (um.find(i) == um.end()) {
-                um[i] = 1;
+        for (int i = 0; i < nums.size(); i++) {
+            if (um.find(nums[i]) == um.end()) {
+                um[nums[i]] = 1;
             } else {
                 return true;
             }
-            // cout << i << " " << um[i] << endl;
         }
         return false;
     }
