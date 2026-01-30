@@ -5,10 +5,9 @@ class Solution {
 public:
     int firstBadVersion(int n) {
         unsigned int bad = 0;
-        bool version = false;
-        while (version == false) {
+        
+        while (isBadVersion(bad) == false) {
             bad += 1;
-            version = isBadVersion(bad);
         }
         
         return bad;
