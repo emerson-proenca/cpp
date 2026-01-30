@@ -3,7 +3,7 @@ public:
     string longestCommonPrefix(vector<string>& strs) {
         string str = strs[0];
 
-        for (auto word : strs) {
+        for (const string& word : strs) {
             if (word.length() < str.length()) {
                 str.erase(word.length());
             }
