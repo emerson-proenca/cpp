@@ -14,9 +14,6 @@ public:
                 }
             }
         }
-        if (str.size() < 1) {
-            return "";
-        }
         return str;
     }
 };
